@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Cases.module.css";
 
 const cases = [
@@ -77,6 +78,7 @@ export default function Cases() {
                 <div className={styles.visualContent}>
                   <div className={styles.visualMain}>
                     <div className={styles.visualLargeBlock} />
+
                     <div className={styles.visualRow}>
                       <div className={styles.visualSmallBlock} />
                       <div className={styles.visualSmallBlock} />
@@ -131,6 +133,12 @@ export default function Cases() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className={styles.cta}>
+          <Link href="#cases" className={styles.ctaLink}>
+            Смотреть все кейсы <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </section>

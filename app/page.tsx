@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Hero from "@/components/Hero/Hero";
 import Tasks from "@/components/Tasks/Tasks";
 import Cases from "@/components/Cases/Cases";
+import About from "@/components/About/About";
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
       <Hero />
       <Tasks />
       <Cases />
+      <About />
+      
     </main>
   );
 }
