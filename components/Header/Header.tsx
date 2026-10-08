@@ -20,10 +20,6 @@ export default function Header() {
       className={styles.header}
       data-navigation-menu-open={isNavigationMenuOpen}
     >
-      <Link href="/" className={styles.brandLink} onClick={closeNavigationMenu}>
-        <span className={styles.brandName}>Nataliia</span>
-      </Link>
-
       <div className={styles.navigationMenuPanel}>
         <nav
           id="mobile-navigation-panel"
@@ -51,7 +47,7 @@ export default function Header() {
             className={styles.mainNavigationLink}
             onClick={closeNavigationMenu}
           >
-            Подход
+            Как работаем
           </Link>
 
           <Link

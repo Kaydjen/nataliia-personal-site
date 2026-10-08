@@ -3,21 +3,20 @@ import styles from "./Process.module.css";
 const steps = [
   {
     number: "01",
-    title: "Разбираемся",
-    description:
-      "Обсуждаем бизнес, текущую ситуацию, цели и ограничения проекта.",
+    title: "Пишете",
+    description: "Рассказываете, что сейчас происходит и чего хотите добиться.",
   },
   {
     number: "02",
-    title: "Формируем план",
+    title: "Разбираемся",
     description:
-      "Определяем аудиторию, задачу, подходящие каналы и последовательность действий.",
+      "Определяем, что мешает результату и что имеет смысл изменить.",
   },
   {
     number: "03",
-    title: "Работаем и оптимизируем",
+    title: "Начинаем работу",
     description:
-      "Запускаем выбранные инструменты, смотрим на результаты и корректируем то, что можно улучшить.",
+      "Собираем план действий и запускаем то, что действительно нужно бизнесу.",
   },
 ];
 
@@ -30,11 +29,16 @@ export default function Process() {
     >
       <div className={styles.container}>
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>ПОДХОД</span>
+          <span className={styles.eyebrow}>КАК РАБОТАЕМ</span>
 
           <h2 id="process-title" className={styles.title}>
-            Как проходит работа
+            Всё проще, чем кажется
           </h2>
+
+          <p className={styles.description}>
+            Вам не нужно заранее разбираться в маркетинге или готовить подробное
+            техническое задание.
+          </p>
         </div>
 
         <div className={styles.steps}>

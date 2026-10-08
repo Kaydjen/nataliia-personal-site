@@ -10,7 +10,7 @@ export default function Footer() {
         </Link>
 
         <span className={styles.copyright}>
-          © {new Date().getFullYear()} Nataliia
+          © 2026 Nataliia
         </span>
       </div>
     </footer>

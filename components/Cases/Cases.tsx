@@ -1,32 +1,28 @@
+import Link from "next/link";
 import styles from "./Cases.module.css";
 
 const cases = [
   {
-    number: "01",
     client: "Beauty brand",
-    task: "Увеличить количество заявок из Instagram.",
+    task: "Получать больше заявок из Instagram.",
     solution:
-      "Пересобрали рекламную стратегию, протестировали новые аудитории и креативы.",
-    result:
-      "Количество заявок выросло на 42%, а стоимость лида снизилась на 28%.",
+      "Пересобрала рекламную стратегию и протестировала новые аудитории и креативы.",
+    result: "+42% заявок",
+    detail: "Стоимость лида −28%",
   },
   {
-    number: "02",
     client: "Локальный бизнес",
-    task: "Увеличить количество обращений из социальных сетей.",
-    solution:
-      "Пересмотрели позиционирование, обновили контент и перенастроили рекламные кампании.",
-    result:
-      "Продвижение стало работать как единая система, а коммуникация с аудиторией стала понятнее.",
+    task: "Получать больше обращений из социальных сетей.",
+    solution: "Пересмотрела позиционирование, контент и рекламные кампании.",
+    result: "Продвижение стало работать как единая система",
+    detail: "Коммуникация с аудиторией стала понятнее",
   },
   {
-    number: "03",
     client: "Экспертный проект",
-    task: "Собрать понятную систему продвижения вместо разрозненных активностей.",
-    solution:
-      "Определили ключевую аудиторию, оффер и основные каналы продвижения.",
-    result:
-      "Появилась единая логика продвижения, в которой каждый канал работает на общую задачу.",
+    task: "Выстроить систему продвижения вместо разрозненных активностей.",
+    solution: "Определила аудиторию, оффер и основные каналы продвижения.",
+    result: "Появилась единая логика продвижения",
+    detail: "Каналы работают на общую задачу",
   },
 ];
 
@@ -38,44 +34,42 @@ export default function Cases() {
           <span className={styles.eyebrow}>КЕЙСЫ</span>
 
           <h2 id="cases-title" className={styles.title}>
-            Как это выглядит в работе
+            Похожие задачи уже решала на практике
           </h2>
-
-          <p className={styles.description}>
-            Примеры задач, подхода и результата.
-          </p>
         </div>
 
         <div className={styles.list}>
+          <div className={styles.columnLabels} aria-hidden="true">
+            <span>КЛИЕНТ</span>
+            <span>ЗАДАЧА</span>
+            <span>СДЕЛАЛИ</span>
+            <span>РЕЗУЛЬТАТ</span>
+          </div>
+
           {cases.map((item) => (
-            <article key={item.number} className={styles.case}>
-              <div className={styles.caseNumber}>{item.number}</div>
+            <article key={item.client} className={styles.case}>
+              <div className={styles.client}>{item.client}</div>
 
-              <div className={styles.content}>
-                <p className={styles.client}>{item.client}</p>
+              <div className={styles.task}>{item.task}</div>
 
-                <div className={styles.details}>
-                  <div className={styles.detail}>
-                    <span className={styles.label}>ЗАДАЧА</span>
+              <div className={styles.solution}>{item.solution}</div>
 
-                    <p className={styles.text}>{item.task}</p>
-                  </div>
-
-                  <div className={styles.detail}>
-                    <span className={styles.label}>ЧТО СДЕЛАЛИ</span>
-
-                    <p className={styles.text}>{item.solution}</p>
-                  </div>
-
-                  <div className={styles.detail}>
-                    <span className={styles.label}>РЕЗУЛЬТАТ</span>
-
-                    <p className={styles.result}>{item.result}</p>
-                  </div>
-                </div>
+              <div className={styles.result}>
+                <strong>{item.result}</strong>
+                <span>{item.detail}</span>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className={styles.actionArea}>
+          <Link href="#contacts" className={styles.action}>
+            <span>Есть похожая задача?</span>
+            <span className={styles.actionLink}>
+              Расскажите о ней
+              <span aria-hidden="true">→</span>
+            </span>
+          </Link>
         </div>
       </div>
     </section>

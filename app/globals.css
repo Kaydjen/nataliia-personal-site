@@ -1,12 +1,17 @@
 :root {
   --background: #ffffff;
-  --foreground: #111111;
+  --surface: #f7f7f5;
+
+  --foreground: #171717;
+  --muted: #686868;
+
+  --border: #e7e7e5;
 
   --accent: #f97316;
   --accent-hover: #ea580c;
 
-  --muted: #666666;
-  --border: #e5e5e5;
+  --content-width: 1180px;
+  --page-gutter: clamp(20px, 4vw, 56px);
 }
 
 * {
@@ -15,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 24px;
 }
 
 body {
@@ -23,7 +29,7 @@ body {
   background: var(--background);
   color: var(--foreground);
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   line-height: 1.5;
 }
 

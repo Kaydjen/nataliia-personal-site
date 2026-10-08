@@ -1,23 +1,21 @@
+import Link from "next/link";
 import styles from "./Tasks.module.css";
 
-const services = [
+const tasks = [
   {
-    number: "01",
-    title: "Таргетированная реклама",
+    title: "Не знаете, с чего начать продвижение?",
     description:
-      "Настройка, запуск и оптимизация рекламных кампаний для привлечения целевой аудитории и заявок.",
+      "Помогу определить, кто ваш клиент, что ему предложить и какие каналы продвижения действительно нужны.",
   },
   {
-    number: "02",
-    title: "SMM",
+    title: "Соцсети есть, но клиентов от них нет?",
     description:
-      "Выстраивание присутствия бизнеса в социальных сетях: контент, позиционирование и коммуникация с аудиторией.",
+      "Разберём позиционирование, контент и рекламу и найдём, что мешает соцсетям работать на бизнес.",
   },
   {
-    number: "03",
-    title: "Маркетинговая стратегия",
+    title: "Реклама запускается, но результат непонятен?",
     description:
-      "Определение аудитории, предложения и каналов продвижения, чтобы собрать маркетинг в понятную систему.",
+      "Найду слабые места, протестирую новые варианты и оптимизирую продвижение по результатам.",
   },
 ];
 
@@ -30,29 +28,24 @@ export default function Tasks() {
     >
       <div className={styles.container}>
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>УСЛУГИ</span>
-
           <h2 id="services-title" className={styles.title}>
-            Что могу сделать для бизнеса
+            Знакомая ситуация?
           </h2>
-
-          <p className={styles.description}>
-            Выбираю инструменты под задачу, а не подстраиваю задачу под
-            инструмент.
-          </p>
         </div>
 
         <div className={styles.grid}>
-          {services.map((service) => (
-            <article key={service.number} className={styles.card}>
-              <span className={styles.number}>{service.number}</span>
-
+          {tasks.map((task) => (
+            <Link key={task.title} href="#contacts" className={styles.card}>
               <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{service.title}</h3>
+                <h3 className={styles.cardTitle}>{task.title}</h3>
 
-                <p className={styles.cardDescription}>{service.description}</p>
+                <p className={styles.cardDescription}>{task.description}</p>
               </div>
-            </article>
+
+              <span className={styles.cardArrow} aria-hidden="true">
+                →
+              </span>
+            </Link>
           ))}
         </div>
       </div>

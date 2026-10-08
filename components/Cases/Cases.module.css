@@ -11,8 +11,8 @@
 /* Heading */
 
 .heading {
-    max-width: 720px;
-    margin-bottom: 56px;
+    max-width: 760px;
+    margin-bottom: 52px;
 }
 
 .eyebrow {
@@ -21,7 +21,7 @@
 
     color: var(--muted);
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.12em;
 }
@@ -31,114 +31,171 @@
 
     font-size: clamp(32px, 3.5vw, 48px);
     font-weight: 700;
-    line-height: 1.12;
+    line-height: 1.1;
     letter-spacing: -0.045em;
 }
 
-.description {
-    margin: 18px 0 0;
 
-    color: var(--muted);
-
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-
-/* Cases */
+/* Case list */
 
 .list {
     border-top: 1px solid var(--border);
 }
 
+.columnLabels,
 .case {
-    min-width: 0;
-    padding: 40px 0;
-
     display: grid;
-    grid-template-columns: 72px minmax(0, 1fr);
-
-    gap: 32px;
-
-    border-bottom: 1px solid var(--border);
-}
-
-.caseNumber {
-    color: var(--accent);
-
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1;
-}
-
-.content {
-    min-width: 0;
-}
-
-.client {
-    margin: 0;
-
-    font-size: 21px;
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: -0.02em;
-}
-
-.details {
-    margin-top: 32px;
-
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+        minmax(120px, 0.7fr) minmax(220px, 1.2fr) minmax(220px, 1.1fr) minmax(190px, 0.9fr);
     gap: 32px;
 }
 
-.detail {
-    min-width: 0;
-}
-
-.label {
-    display: block;
-
-    margin-bottom: 10px;
+.columnLabels {
+    padding: 14px 0;
 
     color: var(--muted);
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.11em;
 }
 
-.text,
-.result {
-    max-width: 420px;
-    margin: 0;
+.case {
+    padding: 30px 0;
 
-    font-size: 15px;
-    line-height: 1.7;
+    border-bottom: 1px solid var(--border);
 }
 
-.text {
-    color: var(--foreground);
+.client,
+.task,
+.solution,
+.result {
+    min-width: 0;
 }
 
-.result {
+.client {
+    color: var(--muted);
+
+    font-size: 13px;
     font-weight: 500;
+    line-height: 1.5;
+}
+
+.task {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.solution {
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.result {
+    padding-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    border-left: 1px solid var(--border);
+}
+
+.result strong {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.result span {
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* CTA */
+
+.actionArea {
+    margin-top: 56px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.action {
+    padding: 13px 18px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--foreground);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.action>span:first-child {
+    color: var(--muted);
+}
+
+.actionLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.actionLink>span {
+    transition: transform 0.2s ease;
+}
+
+.action:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+
+/* Hover */
+
+@media (hover: hover) and (pointer: fine) {
+    .action:hover {
+        background: var(--surface);
+        border-color: #d8d8d6;
+        transform: translateY(-1px);
+    }
+
+    .action:hover .actionLink>span {
+        transform: translateX(2px);
+    }
 }
 
 
 /* Tablet */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .cases {
         padding: 96px 0 104px;
     }
 
+    .columnLabels,
     .case {
-        grid-template-columns: 52px minmax(0, 1fr);
-        gap: 24px;
-    }
+        grid-template-columns:
+            minmax(100px, 0.7fr) minmax(180px, 1.2fr) minmax(180px, 1fr) minmax(170px, 0.9fr);
 
-    .details {
         gap: 24px;
     }
 }
@@ -163,43 +220,52 @@
         font-size: clamp(30px, 8vw, 38px);
     }
 
-    .description {
-        margin-top: 14px;
-        font-size: 15px;
+    .columnLabels {
+        display: none;
     }
 
     .case {
         padding: 28px 0;
 
-        display: block;
-    }
-
-    .caseNumber {
-        margin-bottom: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
     }
 
     .client {
-        font-size: 20px;
+        font-size: 12px;
     }
 
-    .details {
-        margin-top: 24px;
-
-        grid-template-columns: 1fr;
-        gap: 22px;
+    .task {
+        font-size: 18px;
     }
 
-    .text,
-    .result {
+    .solution {
         font-size: 14px;
     }
-}
 
+    .result {
+        padding: 16px;
 
-/* Reduced motion */
+        border-left: 0;
+        background: var(--surface);
+    }
 
-@media (prefers-reduced-motion: reduce) {
-    .case {
-        transition: none;
+    .result strong {
+        font-size: 15px;
+    }
+
+    .result span {
+        font-size: 13px;
+    }
+
+    .actionArea {
+        margin-top: 36px;
+    }
+
+    .action {
+        width: 100%;
+
+        justify-content: center;
     }
 }
