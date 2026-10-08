@@ -1,0 +1,214 @@
+.process {
+    padding: 104px 0 120px;
+}
+
+.container {
+    width: min(100% - 80px, 1400px);
+    margin: 0 auto;
+}
+
+.heading {
+    max-width: 680px;
+    margin-bottom: 48px;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 16px;
+
+    color: var(--accent);
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+.title {
+    margin: 0;
+
+    font-size: clamp(30px, 3.2vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+}
+
+
+/* Steps */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.step {
+    min-width: 0;
+    padding: 0 clamp(24px, 3vw, 44px);
+
+    border-right: 1px solid var(--border);
+}
+
+.step:first-child {
+    padding-left: 0;
+}
+
+.step:last-child {
+    padding-right: 0;
+    border-right: 0;
+}
+
+.number {
+    display: block;
+
+    color: var(--accent);
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.stepContent {
+    margin-top: 28px;
+    max-width: 360px;
+}
+
+.stepTitle {
+    margin: 0;
+
+    font-size: clamp(21px, 2vw, 28px);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+}
+
+.stepDescription {
+    margin: 14px 0 0;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* CTA */
+
+.cta {
+    margin-top: 48px;
+}
+
+.primaryAction {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 13px 22px;
+
+    border-radius: 8px;
+
+    background: var(--accent);
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.primaryAction:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .primaryAction:hover {
+        background: var(--accent-hover);
+        transform: translateY(-2px);
+    }
+}
+
+.primaryAction:active {
+    transform: scale(0.98);
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .step {
+        padding: 0 20px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .process {
+        padding: 76px 0 88px;
+    }
+
+    .container {
+        width: min(100% - 32px, 480px);
+    }
+
+    .heading {
+        margin-bottom: 32px;
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .step,
+    .step:first-child,
+    .step:last-child {
+        padding: 0 0 28px;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .step+.step {
+        padding-top: 28px;
+    }
+
+    .step:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .stepContent {
+        margin-top: 20px;
+    }
+
+    .stepTitle {
+        font-size: 23px;
+    }
+
+    .stepDescription {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .cta {
+        margin-top: 32px;
+    }
+
+    .primaryAction {
+        min-height: 46px;
+        padding: 12px 18px;
+    }
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .primaryAction {
+        transition: none;
+    }
+}
