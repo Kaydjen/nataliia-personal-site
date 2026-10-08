@@ -1,22 +1,17 @@
+import Link from "next/link";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.top}>
-          <span className={styles.name}>Nataliia</span>
+        <Link href="/" className={styles.name}>
+          Nataliia
+        </Link>
 
-          <div className={styles.contacts}>
-            <span>Telegram</span>
-            <span aria-hidden="true">·</span>
-            <span>Instagram</span>
-            <span aria-hidden="true">·</span>
-            <span>Email</span>
-          </div>
-        </div>
-
-        <div className={styles.bottom}>© 2026 Nataliia</div>
+        <span className={styles.copyright}>
+          © {new Date().getFullYear()} Nataliia
+        </span>
       </div>
     </footer>
   );

@@ -1,41 +1,39 @@
-import Link from "next/link";
 import styles from "./FinalCta.module.css";
+
+const contacts = ["Telegram", "Instagram", "Email"];
 
 export default function FinalCta() {
   return (
     <section
       id="contacts"
-      className={styles.finalCta}
-      aria-labelledby="final-cta-title"
+      className={styles.contacts}
+      aria-labelledby="contacts-title"
     >
       <div className={styles.container}>
         <div className={styles.content}>
-          <span className={styles.eyebrow}>ГОТОВЫ ОБСУДИТЬ?</span>
+          <span className={styles.eyebrow}>КОНТАКТЫ</span>
 
-          <h2 id="final-cta-title" className={styles.title}>
-            Есть задача, которую нужно решить?
+          <h2 id="contacts-title" className={styles.title}>
+            Есть задача по продвижению?
           </h2>
 
           <p className={styles.description}>
-            Расскажите о бизнесе и текущей ситуации — обсудим, что можно
-            улучшить и с чего начать.
+            Расскажите, что происходит сейчас, чего хотите добиться и что уже
+            пробовали. Обсудим задачу и возможные варианты работы.
           </p>
-
-          <Link href="#contacts" className={styles.primaryAction}>
-            Обсудить задачу
-          </Link>
         </div>
 
-        <div className={styles.contacts}>
-          <p className={styles.contactTitle}>
-            Напишите мне в Telegram — разберём вашу задачу.
-          </p>
+        <div className={styles.contactArea}>
+          <p className={styles.contactTitle}>Связаться со мной</p>
 
-          <div className={styles.contactLinks} aria-label="Способы связи">
-            <span>Telegram →</span>
-            <span>Instagram →</span>
-            <span>Email →</span>
-          </div>
+          <nav className={styles.contactLinks} aria-label="Контакты">
+            {contacts.map((contact) => (
+              <span key={contact} className={styles.contactLink}>
+                {contact}
+                <span aria-hidden="true">↗</span>
+              </span>
+            ))}
+          </nav>
         </div>
       </div>
     </section>

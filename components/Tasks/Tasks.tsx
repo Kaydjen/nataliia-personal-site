@@ -1,27 +1,23 @@
-import Link from "next/link";
 import styles from "./Tasks.module.css";
 
-const tasks = [
+const services = [
   {
     number: "01",
-    title: "Не получаете достаточно клиентов из рекламы?",
+    title: "Таргетированная реклама",
     description:
-      "Настрою и оптимизирую таргетированную рекламу, чтобы привлекать нужную аудиторию и снижать стоимость обращения.",
-    category: "Таргетированная реклама",
+      "Настройка, запуск и оптимизация рекламных кампаний для привлечения целевой аудитории и заявок.",
   },
   {
     number: "02",
-    title: "Соцсети есть, но они не приводят клиентов?",
+    title: "SMM",
     description:
-      "Выстрою SMM под задачи бизнеса: контент, позиционирование и коммуникацию с аудиторией.",
-    category: "SMM",
+      "Выстраивание присутствия бизнеса в социальных сетях: контент, позиционирование и коммуникация с аудиторией.",
   },
   {
     number: "03",
-    title: "Продвижение есть, но нет понятной системы?",
+    title: "Маркетинговая стратегия",
     description:
-      "Помогу определить аудиторию, предложение и каналы продвижения и собрать маркетинг в единую систему.",
-    category: "Маркетинговая стратегия",
+      "Определение аудитории, предложения и каналов продвижения, чтобы собрать маркетинг в понятную систему.",
   },
 ];
 
@@ -29,50 +25,36 @@ export default function Tasks() {
   return (
     <section
       id="services"
-      className={styles.tasks}
-      aria-labelledby="tasks-title"
+      className={styles.services}
+      aria-labelledby="services-title"
     >
       <div className={styles.container}>
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>ЧЕМ МОГУ БЫТЬ ПОЛЕЗНА</span>
+          <span className={styles.eyebrow}>УСЛУГИ</span>
 
-          <h2 id="tasks-title" className={styles.title}>
-            С какими задачами помогу
+          <h2 id="services-title" className={styles.title}>
+            Что могу сделать для бизнеса
           </h2>
 
           <p className={styles.description}>
-            Подберу решение под задачи и цели вашего бизнеса.
+            Выбираю инструменты под задачу, а не подстраиваю задачу под
+            инструмент.
           </p>
         </div>
 
         <div className={styles.grid}>
-          {tasks.map((task) => (
-            <article key={task.number} className={styles.card}>
-              <span className={styles.number}>{task.number}</span>
+          {services.map((service) => (
+            <article key={service.number} className={styles.card}>
+              <span className={styles.number}>{service.number}</span>
 
               <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{task.title}</h3>
+                <h3 className={styles.cardTitle}>{service.title}</h3>
 
-                <p className={styles.cardDescription}>{task.description}</p>
-              </div>
-
-              <div className={styles.cardFooter}>
-                <span>{task.category}</span>
-
-                <span className={styles.arrow} aria-hidden="true">
-                  ↗
-                </span>
+                <p className={styles.cardDescription}>{service.description}</p>
               </div>
             </article>
           ))}
         </div>
-
-        <p className={styles.additionalTask}>
-          Не нашли свою задачу?{" "}
-          <Link href="#contacts" className={styles.additionalLink}>
-            Расскажите, что вам нужно →
-          </Link>
-        </p>
       </div>
     </section>
   );

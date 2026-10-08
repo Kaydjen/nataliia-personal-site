@@ -20,9 +20,8 @@ export default function Header() {
       className={styles.header}
       data-navigation-menu-open={isNavigationMenuOpen}
     >
-      <Link href="/" className={styles.personalBrandLink}>
-        <span className={styles.brandLogoPlaceholder}>N</span>
-        <span className={styles.personalBrandName}>Nataliia</span>
+      <Link href="/" className={styles.brandLink} onClick={closeNavigationMenu}>
+        <span className={styles.brandName}>Nataliia</span>
       </Link>
 
       <div className={styles.navigationMenuPanel}>
@@ -48,11 +47,11 @@ export default function Header() {
           </Link>
 
           <Link
-            href="#about"
+            href="#process"
             className={styles.mainNavigationLink}
             onClick={closeNavigationMenu}
           >
-            Обо мне
+            Подход
           </Link>
 
           <Link
@@ -63,14 +62,6 @@ export default function Header() {
             Контакты
           </Link>
         </nav>
-
-        <Link
-          href="#contacts"
-          className={styles.projectDiscussionLink}
-          onClick={closeNavigationMenu}
-        >
-          Обсудить задачу
-        </Link>
       </div>
 
       <button

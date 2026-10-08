@@ -1,5 +1,5 @@
 .process {
-    padding: 104px 0 120px;
+    padding: 112px 0 120px;
 }
 
 .container {
@@ -7,16 +7,19 @@
     margin: 0 auto;
 }
 
+
+/* Heading */
+
 .heading {
-    max-width: 680px;
-    margin-bottom: 48px;
+    max-width: 720px;
+    margin-bottom: 56px;
 }
 
 .eyebrow {
     display: block;
     margin-bottom: 16px;
 
-    color: var(--accent);
+    color: var(--muted);
 
     font-size: 12px;
     font-weight: 600;
@@ -26,10 +29,10 @@
 .title {
     margin: 0;
 
-    font-size: clamp(30px, 3.2vw, 44px);
+    font-size: clamp(32px, 3.5vw, 48px);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.04em;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
 }
 
 
@@ -38,11 +41,15 @@
 .steps {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .step {
     min-width: 0;
-    padding: 0 clamp(24px, 3vw, 44px);
+    min-height: 280px;
+    padding: 28px 32px 32px;
 
     border-right: 1px solid var(--border);
 }
@@ -67,14 +74,14 @@
 }
 
 .stepContent {
-    margin-top: 28px;
+    margin-top: 72px;
     max-width: 360px;
 }
 
 .stepTitle {
     margin: 0;
 
-    font-size: clamp(21px, 2vw, 28px);
+    font-size: clamp(22px, 2vw, 28px);
     font-weight: 600;
     line-height: 1.25;
     letter-spacing: -0.03em;
@@ -90,55 +97,28 @@
 }
 
 
-/* CTA */
-
-.cta {
-    margin-top: 48px;
-}
-
-.primaryAction {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 48px;
-    padding: 13px 22px;
-
-    border-radius: 8px;
-
-    background: var(--accent);
-    color: #ffffff;
-
-    font-size: 15px;
-    font-weight: 500;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.primaryAction:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 4px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .primaryAction:hover {
-        background: var(--accent-hover);
-        transform: translateY(-2px);
-    }
-}
-
-.primaryAction:active {
-    transform: scale(0.98);
-}
-
-
 /* Tablet */
 
 @media (max-width: 900px) {
+    .process {
+        padding: 96px 0 104px;
+    }
+
     .step {
-        padding: 0 20px;
+        min-height: 260px;
+        padding: 24px 20px 28px;
+    }
+
+    .step:first-child {
+        padding-left: 0;
+    }
+
+    .step:last-child {
+        padding-right: 0;
+    }
+
+    .stepContent {
+        margin-top: 56px;
     }
 }
 
@@ -147,7 +127,7 @@
 
 @media (max-width: 700px) {
     .process {
-        padding: 76px 0 88px;
+        padding: 80px 0 88px;
     }
 
     .container {
@@ -155,34 +135,39 @@
     }
 
     .heading {
-        margin-bottom: 32px;
+        margin-bottom: 40px;
+    }
+
+    .title {
+        font-size: clamp(30px, 8vw, 38px);
     }
 
     .steps {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
     .step,
     .step:first-child,
     .step:last-child {
-        padding: 0 0 28px;
+        min-height: 0;
+
+        padding: 24px 0;
 
         border-right: 0;
         border-bottom: 1px solid var(--border);
     }
 
-    .step+.step {
-        padding-top: 28px;
+    .step:first-child {
+        padding-top: 24px;
     }
 
     .step:last-child {
-        padding-bottom: 0;
+        padding-bottom: 24px;
         border-bottom: 0;
     }
 
     .stepContent {
-        margin-top: 20px;
+        margin-top: 36px;
     }
 
     .stepTitle {
@@ -192,23 +177,5 @@
     .stepDescription {
         margin-top: 10px;
         font-size: 14px;
-    }
-
-    .cta {
-        margin-top: 32px;
-    }
-
-    .primaryAction {
-        min-height: 46px;
-        padding: 12px 18px;
-    }
-}
-
-
-/* Reduced motion */
-
-@media (prefers-reduced-motion: reduce) {
-    .primaryAction {
-        transition: none;
     }
 }

@@ -1,22 +1,23 @@
-import Link from "next/link";
 import styles from "./Process.module.css";
 
 const steps = [
   {
     number: "01",
     title: "Разбираемся",
-    description: "Обсуждаем бизнес, текущую ситуацию и цель.",
+    description:
+      "Обсуждаем бизнес, текущую ситуацию, цели и ограничения проекта.",
   },
   {
     number: "02",
-    title: "Выбираем решение",
-    description: "Определяем стратегию, аудиторию и подходящие инструменты.",
+    title: "Формируем план",
+    description:
+      "Определяем аудиторию, задачу, подходящие каналы и последовательность действий.",
   },
   {
     number: "03",
-    title: "Запускаем и растим результат",
+    title: "Работаем и оптимизируем",
     description:
-      "Запускаем работу, анализируем показатели и постоянно оптимизируем то, что можно улучшить.",
+      "Запускаем выбранные инструменты, смотрим на результаты и корректируем то, что можно улучшить.",
   },
 ];
 
@@ -29,10 +30,10 @@ export default function Process() {
     >
       <div className={styles.container}>
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>КАК ПРОХОДИТ РАБОТА</span>
+          <span className={styles.eyebrow}>ПОДХОД</span>
 
           <h2 id="process-title" className={styles.title}>
-            От задачи до результата
+            Как проходит работа
           </h2>
         </div>
 
@@ -48,12 +49,6 @@ export default function Process() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className={styles.cta}>
-          <Link href="#contacts" className={styles.primaryAction}>
-            Обсудить мою задачу
-          </Link>
         </div>
       </div>
     </section>

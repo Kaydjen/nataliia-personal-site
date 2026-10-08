@@ -1,5 +1,5 @@
-.tasks {
-    padding: 88px 0 104px;
+.services {
+    padding: 96px 0 112px;
 }
 
 .container {
@@ -7,16 +7,19 @@
     margin: 0 auto;
 }
 
+
+/* Heading */
+
 .heading {
-    max-width: 680px;
-    margin-bottom: 40px;
+    max-width: 720px;
+    margin-bottom: 48px;
 }
 
 .eyebrow {
     display: block;
     margin-bottom: 16px;
 
-    color: var(--accent);
+    color: var(--muted);
 
     font-size: 12px;
     font-weight: 600;
@@ -26,168 +29,107 @@
 .title {
     margin: 0;
 
-    font-size: clamp(30px, 3.2vw, 44px);
+    font-size: clamp(32px, 3.5vw, 48px);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.04em;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
 }
 
 .description {
-    max-width: 560px;
-    margin: 16px 0 0;
+    max-width: 580px;
+    margin: 18px 0 0;
 
     color: var(--muted);
+
     font-size: 16px;
     line-height: 1.7;
 }
 
+
+/* Services */
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    gap: 1px;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .card {
     min-width: 0;
-    min-height: 320px;
-    padding: 28px;
+    min-height: 300px;
+    padding: 28px 32px;
 
     display: flex;
     flex-direction: column;
 
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    border-right: 1px solid var(--border);
+}
 
-    background: var(--background);
-
-    transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+.card:last-child {
+    border-right: 0;
 }
 
 .number {
-    width: 38px;
-    height: 38px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 8px;
-    background: #fff1e7;
-    color: var(--accent-hover);
+    color: var(--accent);
 
     font-size: 13px;
     font-weight: 600;
+    line-height: 1;
 }
 
 .cardContent {
-    margin-top: 28px;
+    margin-top: auto;
+    padding-top: 64px;
 }
 
 .cardTitle {
     margin: 0;
 
-    font-size: clamp(20px, 1.8vw, 24px);
+    max-width: 340px;
+
+    font-size: clamp(22px, 2vw, 28px);
     font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: -0.025em;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
 }
 
 .cardDescription {
+    max-width: 380px;
     margin: 14px 0 0;
 
     color: var(--muted);
+
     font-size: 15px;
     line-height: 1.7;
 }
 
-.cardFooter {
-    margin-top: auto;
-    padding-top: 28px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+/* Tablet */
 
-    color: var(--foreground);
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.arrow {
-    color: var(--accent);
-    font-size: 19px;
-    line-height: 1;
-
-    transition: transform 0.2s ease;
-}
-
-.additionalTask {
-    margin: 28px 0 0;
-
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.additionalLink {
-    color: var(--foreground);
-    font-weight: 500;
-
-    transition: color 0.2s ease;
-}
-
-.additionalLink:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 4px;
-    border-radius: 2px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .card:hover {
-        transform: translateY(-3px);
-        border-color: #f4b183;
-        box-shadow: 0 10px 28px rgb(0 0 0 / 4%);
+@media (max-width: 900px) {
+    .services {
+        padding: 80px 0 96px;
     }
 
-    .card:hover .arrow {
-        transform: translate(2px, -2px);
-    }
-
-    .additionalLink:hover {
-        color: var(--accent-hover);
-    }
-}
-
-@media (max-width: 1000px) {
     .card {
-        padding: 22px;
+        min-height: 280px;
+        padding: 24px;
     }
 
-    .grid {
-        gap: 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    .tasks {
-        padding: 64px 0 76px;
-    }
-
-    .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .card:last-child {
-        grid-column: 1 / -1;
+    .cardContent {
+        padding-top: 48px;
     }
 }
 
-@media (max-width: 540px) {
-    .tasks {
-        padding: 48px 0 56px;
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .services {
+        padding: 72px 0 80px;
     }
 
     .container {
@@ -195,60 +137,61 @@
     }
 
     .heading {
-        margin-bottom: 28px;
+        margin-bottom: 36px;
     }
 
     .title {
-        font-size: clamp(28px, 8vw, 36px);
+        font-size: clamp(30px, 8vw, 38px);
     }
 
     .description {
-        margin-top: 12px;
+        margin-top: 14px;
         font-size: 15px;
     }
 
     .grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 0;
     }
 
     .card,
     .card:last-child {
         min-height: 0;
-        grid-column: auto;
+
+        padding: 24px 0;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
     }
 
-    .card {
-        padding: 22px;
+    .card:first-child {
+        padding-top: 0;
+    }
+
+    .card:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
     }
 
     .cardContent {
-        margin-top: 22px;
+        padding-top: 40px;
     }
 
     .cardTitle {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .cardDescription {
         margin-top: 10px;
         font-size: 14px;
     }
-
-    .cardFooter {
-        padding-top: 24px;
-    }
-
-    .additionalTask {
-        margin-top: 24px;
-    }
 }
 
-@media (prefers-reduced-motion: reduce) {
 
-    .card,
-    .arrow,
-    .additionalLink {
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
         transition: none;
     }
 }
