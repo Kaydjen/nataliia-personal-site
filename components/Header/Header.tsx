@@ -24,14 +24,14 @@ export default function Header() {
         <nav
           id="mobile-navigation-panel"
           className={styles.mainNavigation}
-          aria-label="Основная навигация"
+          aria-label="Основна навігація"
         >
           <Link
             href="#services"
             className={styles.mainNavigationLink}
             onClick={closeNavigationMenu}
           >
-            Услуги
+            Послуги
           </Link>
 
           <Link
@@ -39,7 +39,7 @@ export default function Header() {
             className={styles.mainNavigationLink}
             onClick={closeNavigationMenu}
           >
-            Кейсы
+            Кейси
           </Link>
 
           <Link
@@ -47,7 +47,7 @@ export default function Header() {
             className={styles.mainNavigationLink}
             onClick={closeNavigationMenu}
           >
-            Как работаем
+            Як працюю
           </Link>
 
           <Link
@@ -55,7 +55,7 @@ export default function Header() {
             className={styles.mainNavigationLink}
             onClick={closeNavigationMenu}
           >
-            Контакты
+            Контакти
           </Link>
         </nav>
       </div>
@@ -63,7 +63,7 @@ export default function Header() {
       <button
         type="button"
         className={styles.navigationMenuButton}
-        aria-label={isNavigationMenuOpen ? "Закрыть меню" : "Открыть меню"}
+        aria-label={isNavigationMenuOpen ? "Закрити меню" : "Відкрити меню"}
         aria-expanded={isNavigationMenuOpen}
         aria-controls="mobile-navigation-panel"
         onClick={toggleNavigationMenu}

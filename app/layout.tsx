@@ -1,26 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
-  title: "Nataliia — digital-маркетинг",
-  description:
-    "Таргетированная реклама, SMM и маркетинговая стратегия для бизнеса.",
+  title: "Наталія — digital-маркетинг",
+  description: "Таргетована реклама, SMM і маркетингова стратегія для бізнесу.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ru" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="uk" className={manrope.variable}>
       <body>{children}</body>
     </html>
   );

@@ -3,26 +3,27 @@ import styles from "./Cases.module.css";
 
 const cases = [
   {
-    client: "Beauty brand",
-    task: "Получать больше заявок из Instagram.",
+    client: "Бренд у сфері краси",
+    task: "Збільшити кількість заявок з Instagram.",
     solution:
-      "Пересобрала рекламную стратегию и протестировала новые аудитории и креативы.",
+      "Переглянула рекламну стратегію та протестувала нові аудиторії й креативи.",
     result: "+42% заявок",
-    detail: "Стоимость лида −28%",
+    detail: "Вартість ліда зменшилася на 28%",
   },
   {
-    client: "Локальный бизнес",
-    task: "Получать больше обращений из социальных сетей.",
-    solution: "Пересмотрела позиционирование, контент и рекламные кампании.",
-    result: "Продвижение стало работать как единая система",
-    detail: "Коммуникация с аудиторией стала понятнее",
+    client: "Локальний бізнес",
+    task: "Збільшити кількість звернень із соціальних мереж.",
+    solution: "Переглянула позиціювання, контент і рекламні кампанії.",
+    result: "Просування стало ціліснішим",
+    detail: "Комунікація з аудиторією стала зрозумілішою",
   },
   {
-    client: "Экспертный проект",
-    task: "Выстроить систему продвижения вместо разрозненных активностей.",
-    solution: "Определила аудиторию, оффер и основные каналы продвижения.",
-    result: "Появилась единая логика продвижения",
-    detail: "Каналы работают на общую задачу",
+    client: "Експертний проєкт",
+    task: "Побудувати систему просування замість окремих активностей.",
+    solution:
+      "Визначила цільову аудиторію, пропозицію та основні канали просування.",
+    result: "З'явилася єдина стратегія просування",
+    detail: "Усі канали працюють на спільну мету",
   },
 ];
 
@@ -31,18 +32,18 @@ export default function Cases() {
     <section id="cases" className={styles.cases} aria-labelledby="cases-title">
       <div className={styles.container}>
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>КЕЙСЫ</span>
+          <span className={styles.eyebrow}>КЕЙСИ</span>
 
           <h2 id="cases-title" className={styles.title}>
-            Похожие задачи уже решала на практике
+            Подібні завдання я вже вирішувала на практиці
           </h2>
         </div>
 
         <div className={styles.list}>
           <div className={styles.columnLabels} aria-hidden="true">
-            <span>КЛИЕНТ</span>
-            <span>ЗАДАЧА</span>
-            <span>СДЕЛАЛИ</span>
+            <span>ТИП ПРОЄКТУ</span>
+            <span>ЗАВДАННЯ</span>
+            <span>МОЇ ДІЇ</span>
             <span>РЕЗУЛЬТАТ</span>
           </div>
 
@@ -64,9 +65,10 @@ export default function Cases() {
 
         <div className={styles.actionArea}>
           <Link href="#contacts" className={styles.action}>
-            <span>Есть похожая задача?</span>
+            <span>Маєте схоже завдання?</span>
+
             <span className={styles.actionLink}>
-              Расскажите о ней
+              Обговорімо його
               <span aria-hidden="true">→</span>
             </span>
           </Link>

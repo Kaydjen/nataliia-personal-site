@@ -5,32 +5,36 @@ export default function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.content}>
-        <p className={styles.eyebrow}>SMM · РЕКЛАМА · СТРАТЕГИЯ</p>
+        <p className={styles.eyebrow}>SMM · ТАРГЕТОВАНА РЕКЛАМА · СТРАТЕГІЯ</p>
 
         <h1 id="hero-title" className={styles.title}>
-          Помогаю бизнесу привлекать больше клиентов через рекламу и соцсети.
+          Допомагаю бізнесу залучати клієнтів через рекламу та соціальні мережі.
         </h1>
 
         <p className={styles.description}>
-          Разбираюсь в задаче бизнеса и выстраиваю продвижение вокруг
-          конкретного результата.
+          Спочатку розбираюся у вашому запиті, а потім підбираю рішення
+          відповідно до цілей бізнесу — без шаблонного підходу.
         </p>
 
         <div className={styles.actions}>
           <Link href="#contacts" className={styles.primaryAction}>
-            Обсудить задачу
+            Обговорити завдання
           </Link>
 
           <Link href="#cases" className={styles.secondaryAction}>
-            Посмотреть кейсы
+            Переглянути кейси
             <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
 
       <div className={styles.imageWrapper}>
-        <div className={styles.imagePlaceholder} role="img" aria-label="Photo">
-          <span>Photo</span>
+        <div
+          className={styles.imagePlaceholder}
+          role="img"
+          aria-label="photo"
+        >
+          <span>photo</span>
         </div>
       </div>
     </section>

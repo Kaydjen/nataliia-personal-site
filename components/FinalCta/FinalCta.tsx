@@ -24,18 +24,19 @@ export default function FinalCta() {
     >
       <div className={styles.container}>
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>КОНТАКТЫ</span>
+          <span className={styles.eyebrow}>КОНТАКТИ</span>
 
           <h2 id="contacts-title" className={styles.title}>
-            Расскажите, что хотите изменить в продвижении
+            Розкажіть, що хочете змінити у просуванні
           </h2>
 
           <p className={styles.description}>
-            Опишите задачу в нескольких словах. Дальше разберёмся вместе.
+            Опишіть свою ситуацію кількома словами. Я допоможу визначити, з чого
+            варто почати.
           </p>
         </div>
 
-        <nav className={styles.contactList} aria-label="Способы связи">
+        <nav className={styles.contactList} aria-label="Способи зв'язку">
           {contacts.map((contact) => (
             <a
               key={contact.name}
